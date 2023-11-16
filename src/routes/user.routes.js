@@ -73,8 +73,8 @@ router.post("/login", async (req, res) => {
       throw new Error('Nenhum usuário encontado.')
     }
 
-    const validacaoSenha = await bcrypt.compare(senha, user.senha);
-    if (!validacaoSenha) {
+    const validaSenha = await bcrypt.compare(senha, user.senha);
+    if (!validaSenha) {
       throw new Error("Combinação errada de E-mail / Senha.")
     }
 
