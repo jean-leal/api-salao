@@ -11,7 +11,7 @@ const aws = require("../services/aws.js");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  const { email, cpf } = req.body;
+  const { email } = req.body;
 
   //verificando se o usuario existe
   const existentUser = await User.findOne({
