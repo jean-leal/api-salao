@@ -77,11 +77,9 @@ router.post("/login", async (req, res) => {
     if (!validaSenha) {
       throw new Error("Combinação errada de E-mail / Senha.")
     }
-
     res.json({
       user,
     })
-
   } catch (err) {
     res.json({ error: true, message: err.message });
   }

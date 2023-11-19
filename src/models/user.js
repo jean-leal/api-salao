@@ -19,15 +19,16 @@ const user = new Schema({
     required: [true, 'Senha é obrigatório.'],
   },
   foto: String,  
-  cpf: {
-    type: String, 
-    require: [true, 'CPF é obrigatório']
-  },
   status: {
     type: String,
     required: true,
     enum: ['A', 'I', 'E'],
     default: 'A'
+  },
+  tipo: {
+    type: String,
+    enum: ['usuario', 'estabelecimento'],
+    default: 'usuario'
   },
   dataNascimento: {
     type: String
