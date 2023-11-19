@@ -119,7 +119,6 @@ router.post('/filter', async (req, res) =>{
 
 router.get('/salao/:salaoId', async (req, res) =>{
   try {
-    console.log("chegou aqui")
     const {salaoId} = req.params;
     let listaColaboradores = [] ;
 

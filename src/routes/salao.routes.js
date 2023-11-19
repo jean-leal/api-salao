@@ -3,6 +3,7 @@ const router = express.Router();
 const Salao = require('../models/salao');
 const Servico = require('../models/servico');
 const Horario = require('../models/horario');
+const SalaoColaborador = require('../models/relationship/salaoColaborador');
 
 const util = require('../services/util')
 
