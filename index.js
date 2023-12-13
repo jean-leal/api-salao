@@ -35,7 +35,7 @@ app.use('/agendamento', require('./src/routes/agendamento.routes'));
 app.use('/dias-disponiveis', require('./src/routes/agendamento.routes'));
 app.use('/user', require('./src/routes/user.routes'));
 
-//variables
+//variaveis
 app.set('port', 8000);
 
 app.listen(app.get('port'), ()=>{

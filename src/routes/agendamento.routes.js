@@ -11,6 +11,22 @@ const Servico = require('../models/servico');
 const Agendamento = require('../models/agendamento');
 const Horarios = require('../models/horario');
 
+router.get('/agendamentos/:userId', async (req, res) =>{
+  try {
+    const {userId} = req.params;
+    const agendamentos = await Agendamento.find({clienteId: userId})
+    .populate([
+      {path: 'servicoId', select: 'titulo duracao preco'},
+      {path: 'salaoId', select: 'nome'},
+      {path: 'colaboradorId', select: 'nome'}
+    ]);
+
+    res.json({ agendamentos });
+  } catch (err) {
+    res.json({ error: true, message: err.message});
+  }
+})
+
 router.post('/', async (req, res) =>{
 
   try {
