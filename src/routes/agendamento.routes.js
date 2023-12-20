@@ -21,6 +21,15 @@ router.get('/agendamentos/:userId', async (req, res) =>{
       {path: 'colaboradorId', select: 'nome'}
     ]);
 
+    //fazendo a ordenação dos agendamentos por data, da mais proxima para a mais antiga. 
+    agendamentos.sort(function(a, b,i) {
+      if(a.data > b.data) {
+        return -1;
+      } else {
+        return true;
+      }
+    });
+
     res.json({ agendamentos });
   } catch (err) {
     res.json({ error: true, message: err.message});
